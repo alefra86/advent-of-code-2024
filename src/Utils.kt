@@ -13,9 +13,11 @@ fun readInput(name: String) = Path("src/$name.txt").readText().trim().lines()
 
 fun readLines(name: String) = file(name).readLines()
 
-fun readText(name: String) = file(name).readText()
+fun readText(name: String) = file(name).readText().trim()
 
 private fun file(name: String) = File("src", "$name.txt")
+
+fun String.removeNewLines() = this.replace("\n", "")
 
 /**
  * Converts string to md5 hash.
